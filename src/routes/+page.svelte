@@ -1,2 +1,3 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<!-- this should not be seen, index.php should redirect to the correct language -->
+<a href="/de/">Deutsch</a>
+<a href="/en/">English</a>
