@@ -9,6 +9,9 @@
 	div { text-align: center }
 	ul { list-style-type:none; padding:0; margin:0 }
 	.bold { font-weight:bold }
+	/*footer { position:absolute; bottom:0; text-align:center;  } */
+	footer { margin-top:3em; text-align:center;  }
+	footer a { color:gray }
 </style>
 
 <div>
@@ -49,3 +52,5 @@ Eulachpark / Halle 710 / Neuhegi
 
 {/if}
 </div>
+
+<footer><a href="https://jonglierfestival.ch/2016/">2016 Uster</a></footer>
