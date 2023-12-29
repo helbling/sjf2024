@@ -4,6 +4,21 @@
 	let lang, page;
 	$: lang = data.lang;
 	$: page = data.route.id.replace(/\/\[lang\]/, '');
+
+	const pages = [
+		{ page: '',          de:'Home' },
+		{ page: 'programm', de:'Programm', en:'Program' },
+
+		// { page: 'workshops',    de:'Workshops' },
+		// { page: 'anfahrt',      de:'Anfahrt' },
+		// { page: 'gelaende',     de:'Gelände' },
+		// { page: 'unterkunft',   de:'Unterkunft' },
+		// { page: 'verpflegung',  de:'Verpflegung' },
+		// { page: 'zirkusjugend', de:'Zirkusjugend' },
+		// { page: 'goenner',      de:'Gönner' },
+		// { page: 'medien',       de:'Medien' },
+		// { page: 'kontakt',      de:'Kontakt' },
+	];
 </script>
 
 <style>
@@ -24,6 +39,15 @@
 	@media (max-width:34em) {
 		nav { margin-top:2em; padding:1em }
 		nav a, nav p { display:inline }
+
+
+		nav { position:fixed; bottom:0; width:100%; margin:-0.5em; line-height:2 }
+		#main { margin-bottom:5em }
+		/* doesn't work - logo doesn't scroll this way.. */
+		/*
+			#main { height:calc(100vh - 23em); overflow-y:scroll }
+		*/
+
 	}
 
 	@media (min-width:34em) {
@@ -58,8 +82,9 @@
 				<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
 			</p>
 
-			<a class:active={page==''}          href="/{lang}/">Home</a>
-			<a class:active={page=='/programm'} href="/{lang}/programm">Programm</a>
+			{#each pages as p}
+				<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
+			{/each}
 		</div>
 	</nav>
 </div>
