@@ -7,7 +7,7 @@
 
 	const pages = [
 		{ page: '',          de:'Home' },
-		{ page: 'programm', de:'Programm', en:'Program' },
+		{ page: 'programm',  de:'Programm', en:'Schedule' },
 
 		// { page: 'workshops',    de:'Workshops' },
 		// { page: 'anfahrt',      de:'Anfahrt' },

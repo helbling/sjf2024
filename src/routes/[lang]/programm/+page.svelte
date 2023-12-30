@@ -20,7 +20,7 @@
 <div class=outer>
 <div class=inner>
 
-<h1>{t('Programm', 'Program')}</h1>
+<h1>{t('Programm', 'Schedule')}</h1>
 
 <h2>{t('Freitag, 30.8. ab 15:00 Uhr', 'Friday, 30.8. from 3pm')}</h2>
 <ul>
