@@ -5,6 +5,17 @@
 	$: lang = data.lang;
 </script>
 
+<style>
+
+@media (max-width:34em) {
+	.outer { text-align:center }
+	.inner { display:inline-block; text-align:left }
+}
+</style>
+
+<div class=outer>
+<div class=inner>
+
 {#if lang == 'de'}
 <h1>Programm</h1>
 
@@ -57,3 +68,6 @@
 </ul>
 
 {/if}
+
+</div>
+</div>
