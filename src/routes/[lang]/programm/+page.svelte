@@ -38,7 +38,8 @@
 	<li>Fire Space &amp; Light Night</li>
 </ul>
 
-<h2>{t('Sonntag, 1.9. bis xx:00 Uhr', 'Sunday, 1.9. until x pm')}</h2>
+<h2>{t('Sonntag, 1.9.', 'Sunday, 1.9.')}</h2>
+	<!-- TODO: bis wann? -->
 <ul>
 	<li>{t_workshops}</li>
 	<li>{t_juggling_market}</li>
