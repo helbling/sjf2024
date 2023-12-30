@@ -3,7 +3,7 @@
 	export let data;
 	let lang, page;
 	$: lang = data.lang;
-	$: page = data.route.id.replace(/\/\[lang\]/, '');
+	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
 
 	const pages = [
 		{ page: '',          de:'Home' },
