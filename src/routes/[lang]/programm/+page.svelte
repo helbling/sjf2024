@@ -1,8 +1,12 @@
 <script>
 	export let data;
-	let t, lang;
-	$: t = data.t;
-	$: lang = data.lang;
+	let t, lang, t_workshops, t_juggling_market;
+	$: {
+		t = data.t;
+		lang = data.lang;
+		t_workshops = t('Abwechslungsreiche Workshops', 'Workshops');
+		t_juggling_market = t('Jongliermarkt', 'Juggling Market');
+	}
 </script>
 
 <style>
@@ -16,58 +20,32 @@
 <div class=outer>
 <div class=inner>
 
-{#if lang == 'de'}
-<h1>Programm</h1>
+<h1>{t('Programm', 'Program')}</h1>
 
-<h2>Freitag, 30.8. ab 15:00 Uhr</h2>
+<h2>{t('Freitag, 30.8. ab 15:00 Uhr', 'Friday, 30.8. from 3pm')}</h2>
 <ul>
-	<li>Abwechslungsreiche Workshops</li>
-	<li>Jongliermarkt</li>
+	<li>{t_workshops}</li>
+	<li>{t_juggling_market}</li>
 </ul>
 
-<h2>Samstag, 31.8.</h2>
+<h2>{t('Samstag', 'Saturday')}, 31.8.</h2>
 <ul>
-	<li>Abwechslungsreiche Workshops</li>
-	<li>Jongliermarkt</li>
-	<li>Spektakuläre Galashow</li>
+	<li>{t_workshops}</li>
+	<li>{t_juggling_market}</li>
+	<li>14:00 {t('Ende Anmeldung Juggling-Battles', 'Juggling-Battles end of subscription')}</li>
+	<li>15:00 Juggling-Battles {t('Qualifikation', 'Qualifications')}</li>
+	<li>19:30 {t('Spektakuläre', 'Spectacular')} Galashow</li>
 	<li>Fire Space &amp; Light Night</li>
 </ul>
 
-<h2>Samstag, 1.9. bis xx:00 Uhr</h2>
+<h2>{t('Sonntag, 1.9. bis xx:00 Uhr', 'Sunday, 1.9. until x pm')}</h2>
 <ul>
-	<li>Abwechslungsreiche Workshops</li>
-	<li>Jongliermarkt</li>
-	<li>Jonglierspiel &amp; -wettbewerb</li>
-	<li>Open Space</li>
+	<li>{t_workshops}</li>
+	<li>{t_juggling_market}</li>
+	<li>13:00 {t('Jonglierspiel & -wettbewerb', 'Juggling games and competition')}</li>
+	<li>14:00 Juggling-Battles</li>
+	<!-- <li>Open Space</li> -->
 </ul>
-
-{:else}
-
-<h1>Program</h1>
-
-<h2>Friday, 30.8. from 3pm</h2>
-<ul>
-	<li>Workshops</li>
-	<li>Juggling Market</li>
-</ul>
-
-<h2>Saturday, 31.8.</h2>
-<ul>
-	<li>Workshops</li>
-	<li>Juggling Market</li>
-	<li>Spectacular Galashow</li>
-	<li>Fire Space &amp; Light Night</li>
-</ul>
-
-<h2>Sunday, 1.9. until x pm</h2>
-<ul>
-	<li>Workshops</li>
-	<li>Juggling Market</li>
-	<li>Juggling games and competition</li>
-	<li>Open Space</li>
-</ul>
-
-{/if}
 
 </div>
 </div>
