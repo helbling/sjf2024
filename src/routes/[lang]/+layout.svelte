@@ -36,21 +36,19 @@
 
 	h1 { display: none }
 
-	@media (max-width:34em) {
-		nav { margin-top:2em; padding:1em }
-		nav a, nav p { display:inline }
+	@media (max-width:42em) {
+		nav { overflow-x:auto; display:flex; padding:0.5em; white-space: nowrap }
+		nav p { display:flex; padding:0; margin:0; margin-right:1em }
 
+		/* TODO: on small screens we should add arrows to indicate more content if we have more pages */
 
+		/*
 		nav { position:fixed; bottom:0; width:100%; margin:-0.5em; line-height:2 }
 		#main { margin-bottom:5em }
-		/* doesn't work - logo doesn't scroll this way.. */
-		/*
-			#main { height:calc(100vh - 23em); overflow-y:scroll }
-		*/
-
+		 */
 	}
 
-	@media (min-width:34em) {
+	@media (min-width:42em) {
 		.logo, nav { width:14em }
 		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:#f0b045 }
 		nav { position:absolute; top:14em; margin-left:2em; width:9em }
@@ -68,23 +66,24 @@
 </svelte:head>
 
 <div id="container" class="index">
+
 	<div class=logo>
 		<a href="/{lang}" class=logo><img src="/img/logo504.png" alt="Logo {title}"></a>
 	</div>
+
+	<nav>
+		<p class=language>
+			<a class:active={lang=='de'} href="{data.route.id.replace(/\[lang\]/, 'de')}">DE</a>
+			<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
+		</p>
+		{#each pages as p}
+			<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
+		{/each}
+	</nav>
+
 	<div id="main">
 		<h1>{title}</h1>
 		<slot></slot>
 	</div>
-	<nav>
-		<div class=bar>
-			<p class=language>
-				<a class:active={lang=='de'} href="{data.route.id.replace(/\[lang\]/, 'de')}">DE</a>
-				<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
-			</p>
 
-			{#each pages as p}
-				<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
-			{/each}
-		</div>
-	</nav>
 </div>

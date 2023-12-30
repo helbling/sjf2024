@@ -11,7 +11,7 @@
 
 <style>
 
-@media (max-width:34em) {
+@media (max-width:42em) {
 	.outer { text-align:center }
 	.inner { display:inline-block; text-align:left }
 }
