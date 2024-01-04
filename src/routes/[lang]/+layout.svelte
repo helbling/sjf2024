@@ -70,10 +70,11 @@
 	}
 
 	@media (min-width:42em) {
-		.logo, nav { width:14em }
+		.logo, nav { position:absolute; width:14em }
+		.logo { text-align: left }
 		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:#f0b045 }
 		nav { position:absolute; top:14em; margin-left:2em; width:9em }
-		#main { position:relative; top:-14em; margin-left:14em; padding-left:1em; min-height:35em }
+		#main { margin-left:14em; padding-left:1em; min-height:35em }
 	}
 </style>
 
