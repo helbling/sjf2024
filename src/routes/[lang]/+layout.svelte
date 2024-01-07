@@ -14,7 +14,7 @@
 		{ page: 'programm',  de:'Programm', en:'Schedule' },
 
 		// { page: 'workshops',    de:'Workshops' },
-		// { page: 'anfahrt',      de:'Anfahrt' },
+		{ page: 'anfahrt',      de:'Anfahrt', en:'Getting there' },
 		// { page: 'gelaende',     de:'Gelände' },
 		// { page: 'unterkunft',   de:'Unterkunft' },
 		// { page: 'verpflegung',  de:'Verpflegung' },
