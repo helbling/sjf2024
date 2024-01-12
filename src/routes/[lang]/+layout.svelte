@@ -3,7 +3,7 @@
 
 	export const title = '37th Swiss Juggling Convention Winterthur';
 	export let data;
-	let lang, page, nav;
+	let lang, page, nav, prev, next;
 	$: lang = data.lang;
 	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
 	let arrow_left_visible = false;
@@ -24,6 +24,12 @@
 		// { page: 'kontakt',      de:'Kontakt' },
 	];
 
+	$: {
+		const pageIdx = pages.findIndex((p) => p.page == page);
+		prev = pageIdx > 0 ? pages[pageIdx - 1] : undefined;
+		next = pageIdx < pages.length - 1 ? pages[pageIdx + 1] : undefined;
+	}
+
 	function navscroll(e) {
 		arrow_left_visible = nav.scrollLeft > 0;
 		arrow_right_visible = nav.scrollLeft < nav.scrollWidth - nav.clientWidth;
@@ -37,11 +43,11 @@
 	:global(html),:global(body) { height:100%; padding:0; margin:0; font-family: 'Open Sans', Helvetica, Arial, sans-serif; background:#f8f8f8; font-size:18px }
 	:global(html) { overflow-y:scroll; }
 	#container { margin:0 auto; max-width:70em; background:#fff; padding:0.5em }
-	nav { background-color:#f0b045; padding:0.5em }
-	nav a { display:block; text-decoration:none; color:#444; padding:0.5em }
+	nav, .navlinks { background-color:#f0b045; padding:0.5em }
+	nav a, .navlinks a { display:block; text-decoration:none; color:#444; padding:0.5em }
 	nav .language a  { display:inline }
 	nav a.active { background-color:rgba(255,255,255,0.6); font-weight:bold }
-	nav a:hover  { background-color:rgba(255,255,255,0.9) }
+	nav a:hover, .navlinks a:active  { background-color:rgba(255,255,255,0.9) }
 
 	.logo { text-align: center }
 	.logo img { width: 100%; max-width:14em }
@@ -67,6 +73,10 @@
 		nav { position:fixed; bottom:0; width:100%; margin:-0.5em; line-height:2 }
 		#main { margin-bottom:5em }
 		 */
+
+		.navlinks { display:grid; grid-template-columns:1fr 1fr; margin-top: 3em }
+		.navlinks a.prev { text-align:right }
+		.navlinks a.next { grid-column-start:2 }
 	}
 
 	@media (min-width:42em) {
@@ -75,6 +85,7 @@
 		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:#f0b045 }
 		nav { position:absolute; top:14em; margin-left:2em; width:9em }
 		#main { margin-left:14em; padding-left:1em; min-height:35em }
+		.navlinks { display:none }
 	}
 </style>
 
@@ -129,6 +140,19 @@
 	<div id="main">
 		<h1>{title}</h1>
 		<slot></slot>
+
+		<p class=navlinks>
+			{#if prev}
+				<a class=prev href="/{lang}/{prev.page}">
+					&lt; {prev[lang] ? prev[lang] : prev['de']}
+				</a>
+			{/if}
+			{#if next}
+				<a class=next href="/{lang}/{next.page}">
+					{next[lang] ? next[lang] : next['de']} &gt;
+				</a>
+			{/if}
+		</p>
 	</div>
 
 </div>
