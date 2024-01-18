@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from 'svelte';
+	import pages from '$lib/pages.mjs';
 
 	export const title = '37th Swiss Juggling Convention Winterthur';
 	export let data;
@@ -8,21 +9,6 @@
 	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
 	let arrow_left_visible = false;
 	let arrow_right_visible = false;
-
-	const pages = [
-		{ page: '',          de:'Home' },
-		{ page: 'programm',  de:'Programm', en:'Schedule' },
-
-		// { page: 'workshops',    de:'Workshops' },
-		{ page: 'anfahrt',      de:'Anfahrt', en:'Getting there' },
-		// { page: 'gelaende',     de:'Gelände' },
-		// { page: 'unterkunft',   de:'Unterkunft' },
-		// { page: 'verpflegung',  de:'Verpflegung' },
-		// { page: 'zirkusjugend', de:'Zirkusjugend' },
-		// { page: 'goenner',      de:'Gönner' },
-		// { page: 'medien',       de:'Medien' },
-		// { page: 'kontakt',      de:'Kontakt' },
-	];
 
 	$: {
 		const pageIdx = pages.findIndex((p) => p.page == page);
