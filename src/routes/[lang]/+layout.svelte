@@ -3,7 +3,7 @@
 
 	export const title = '37th Swiss Juggling Convention Winterthur';
 	export let data;
-	let lang, page, nav, prev, next;
+	let lang, page, nav, prev, next, pageTitle,htmlTitle;
 	$: lang = data.lang;
 	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
 	let arrow_left_visible = false;
@@ -28,6 +28,10 @@
 		const pageIdx = pages.findIndex((p) => p.page == page);
 		prev = pageIdx > 0 ? pages[pageIdx - 1] : undefined;
 		next = pageIdx < pages.length - 1 ? pages[pageIdx + 1] : undefined;
+		pageTitle = '';
+		if (pageIdx >= 0)
+			pageTitle = pages[pageIdx][lang] ? pages[pageIdx][lang] : pages[pageIdx]['de'];
+		htmlTitle = title + (pageTitle ? ' - ' + pageTitle : '');
 	}
 
 	function navscroll(e) {
@@ -92,8 +96,8 @@
 <svelte:head>
 	<meta http-equiv="Language" content="de">
 
-	<title>{title}</title>
-	<meta name="description" content="{title}" />
+	<title>{htmlTitle}</title>
+	<meta name="description" content="{htmlTitle}" />
 
 	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans">
 </svelte:head>
