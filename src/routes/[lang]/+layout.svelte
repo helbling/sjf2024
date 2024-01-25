@@ -4,7 +4,7 @@
 
 	export const title = '37th Swiss Juggling Convention Winterthur';
 	export let data;
-	let lang, page, nav, prev, next, pageTitle,htmlTitle;
+	let lang, page, prev, next, pageTitle, htmlTitle;
 	$: lang = data.lang;
 	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
 	let arrow_left_visible = false;
@@ -19,25 +19,61 @@
 			pageTitle = pages[pageIdx][lang] ? pages[pageIdx][lang] : pages[pageIdx]['de'];
 		htmlTitle = title + (pageTitle ? ' - ' + pageTitle : '');
 	}
-
-	function navscroll(e) {
-		arrow_left_visible = nav.scrollLeft > 0;
-		arrow_right_visible = nav.scrollLeft < nav.scrollWidth - nav.clientWidth;
-	}
-	onMount(() => {
-		navscroll();
-	});
 </script>
 
 <style>
+	:root { --text_color:#444 }
 	:global(html),:global(body) { height:100%; padding:0; margin:0; font-family: 'Open Sans', Helvetica, Arial, sans-serif; background:#f8f8f8; font-size:18px }
 	:global(html) { overflow-y:scroll; }
 	#container { margin:0 auto; max-width:70em; background:#fff; padding:0.5em }
 	nav, .navlinks { background-color:#f0b045; padding:0.5em }
-	nav a, .navlinks a { display:block; text-decoration:none; color:#444; padding:0.5em }
+	nav a, .navlinks a { display:block; text-decoration:none; color:var(--text_color); padding:0.5em }
 	nav .language a  { display:inline }
 	nav a.active { background-color:rgba(255,255,255,0.6); font-weight:bold }
 	nav a:hover, .navlinks a:active  { background-color:rgba(255,255,255,0.9) }
+
+	.navbar {
+		box-shadow: 1px 1px 5px 0px gray;
+		position: sticky;
+		top: 0;
+		width: 100%;
+	}
+
+	.hamb {
+		position:absolute;
+		right: 0;
+		cursor: pointer;
+		float: right;
+		padding: 36px 10px;
+		width: 32px;
+	}
+
+	.hamb-line {
+		background: var(--text_color);
+		display: block;
+		height: 2px;
+		position: relative;
+		width: 24px;
+	}
+
+	.hamb-line::before,
+	.hamb-line::after {
+		background: var(--text_color);
+		content: '';
+		display: block;
+		height: 100%;
+		position: absolute;
+		transition: all .2s ease-out;
+		width: 100%;
+	}
+	.hamb-line::before { top: 5px }
+	.hamb-line::after  { top: -5px }
+
+	#hamb-state { display: none }
+	#hamb-state:checked ~ nav { max-height: 100% }
+	#hamb-state:checked ~ .hamb .hamb-line { background: transparent }
+	#hamb-state:checked ~ .hamb .hamb-line::before { transform: rotate(-45deg); top:0 }
+	#hamb-state:checked ~ .hamb .hamb-line::after { transform: rotate(45deg); top:0 }
 
 	.logo { text-align: center }
 	.logo img { width: 100%; max-width:14em }
@@ -45,7 +81,7 @@
 	h1 { display: none }
 	.arrow { display:none }
 
-	@media (max-width:42em) {
+	@media (max-width:42em) { /* Small screens */
 		.arrow.visible { display:block;  }
 		.arrow { position:absolute; background:#f0b045; cursor:pointer }
 		.arrow.left  { left: 0.5em }
@@ -54,23 +90,22 @@
 		.arrow.left.fade  { left:  2.2em; background:linear-gradient(to right, rgba(240,176,69,1), rgba(240,176,69,0)) }
 		.arrow.right.fade { right: 2.2em; background:linear-gradient(to left, rgba(240,176,69,1), rgba(240,176,69,0)) }
 
-		nav { overflow-x:auto; display:flex; padding:0.5em; white-space: nowrap }
-		nav p { display:flex; padding:0; margin:0; margin-right:1em }
-
-		/* TODO: on small screens we should add arrows to indicate more content if we have more pages */
-
-		/*
-		nav { position:fixed; bottom:0; width:100%; margin:-0.5em; line-height:2 }
 		#main { margin-bottom:5em }
-		 */
+		nav {
+				overflow: hidden;
+				max-height: 3em;
+				transition: max-height .5s ease-out; /* TODO: fix this transition.. */
+		}
 
-		.navlinks { display:grid; grid-template-columns:1fr 1fr; margin-top: 3em }
+		.navlinks { display:grid; grid-template-columns:1fr 1fr; margin-top: 2em }
 		.navlinks a.prev { text-align:right }
 		.navlinks a.next { grid-column-start:2 }
+
 	}
 
-	@media (min-width:42em) {
-		.logo, nav { position:absolute; width:14em }
+	@media (min-width:42em) { /* wide screens */
+		.logo, .navbar { position:absolute; width:14em }
+		.hamb { display:none }
 		.logo { text-align: left }
 		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:#f0b045 }
 		nav { position:absolute; top:14em; margin-left:2em; width:9em }
@@ -94,38 +129,22 @@
 		<a href="/{lang}" class=logo><img src="/img/logo504.png" alt="Logo {title}"></a>
 	</div>
 
-	<nav bind:this={nav} on:scroll={navscroll}>
-		<a
-			class="arrow left"
-			class:visible={arrow_left_visible}
-			on:click|preventDefault={() => { nav.scrollLeft -= nav.clientWidth / 2}}
-			href={null}
-		>&nbsp;&lt;</a>
-		<a
-			class="arrow left fade"
-			class:visible={arrow_left_visible}
-			href={null}
-		>&nbsp;</a>
-		<a
-			class="arrow right fade"
-			class:visible={arrow_right_visible}
-			href={null}
-		>&nbsp;</a>
-		<a
-			class="arrow right"
-			class:visible={arrow_right_visible}
-			on:click|preventDefault={() => { nav.scrollLeft += nav.clientWidth / 2}}
-			href={null}
-		>&gt;&nbsp;</a>
+	<header class=navbar>
+			<!-- Hamburger icon -->
+			<input type="checkbox" id="hamb-state"/>
+			<label class="hamb" for="hamb-state"><span class="hamb-line"></span></label>
 
-		<p class=language>
-			<a class:active={lang=='de'} href="{data.route.id.replace(/\[lang\]/, 'de')}">DE</a>
-			<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
-		</p>
-		{#each pages as p}
-			<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
-		{/each}
-	</nav>
+			<nav>
+				<p class=language>
+					<a class:active={lang=='de'} href="{data.route.id.replace(/\[lang\]/, 'de')}">DE</a>
+					<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
+				</p>
+				{#each pages as p}
+					<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
+				{/each}
+		</nav>
+
+	</header>
 
 	<div id="main">
 		<h1>{title}</h1>
