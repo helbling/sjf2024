@@ -4,11 +4,10 @@
 
 	export const title = '37th Swiss Juggling Convention Winterthur';
 	export let data;
-	let lang, page, prev, next, pageTitle, htmlTitle;
+	let lang, page, prev, next, pageTitle, htmlTitle, hambState;
+	const nPages = pages.length;
 	$: lang = data.lang;
 	$: page = data.route.id.replace(/\/\[lang\]\/?/, '');
-	let arrow_left_visible = false;
-	let arrow_right_visible = false;
 
 	$: {
 		const pageIdx = pages.findIndex((p) => p.page == page);
@@ -18,6 +17,10 @@
 		if (pageIdx >= 0)
 			pageTitle = pages[pageIdx][lang] ? pages[pageIdx][lang] : pages[pageIdx]['de'];
 		htmlTitle = title + (pageTitle ? ' - ' + pageTitle : '');
+	}
+
+	function pageClick(e) {
+		hambState.click();
 	}
 </script>
 
@@ -70,32 +73,24 @@
 	.hamb-line::after  { top: -5px }
 
 	#hamb-state { display: none }
-	#hamb-state:checked ~ nav { max-height: 100% }
-	#hamb-state:checked ~ .hamb .hamb-line { background: transparent }
-	#hamb-state:checked ~ .hamb .hamb-line::before { transform: rotate(-45deg); top:0 }
-	#hamb-state:checked ~ .hamb .hamb-line::after { transform: rotate(45deg); top:0 }
 
 	.logo { text-align: center }
 	.logo img { width: 100%; max-width:14em }
 
 	h1 { display: none }
-	.arrow { display:none }
 
 	@media (max-width:42em) { /* Small screens */
-		.arrow.visible { display:block;  }
-		.arrow { position:absolute; background:#f0b045; cursor:pointer }
-		.arrow.left  { left: 0.5em }
-		.arrow.right { right:0.5em }
-
-		.arrow.left.fade  { left:  2.2em; background:linear-gradient(to right, rgba(240,176,69,1), rgba(240,176,69,0)) }
-		.arrow.right.fade { right: 2.2em; background:linear-gradient(to left, rgba(240,176,69,1), rgba(240,176,69,0)) }
-
 		#main { margin-bottom:5em }
 		nav {
 				overflow: hidden;
-				max-height: 3em;
-				transition: max-height .5s ease-out; /* TODO: fix this transition.. */
+				max-height: 2.9em;
+				transition: all .2s ease-out; /* TODO: fix this transition.. */
 		}
+		#hamb-state:checked ~ nav { max-height: calc(3em + var(--n-pages) * 2.5em) }
+
+		#hamb-state:checked ~ .hamb .hamb-line { background: transparent }
+		#hamb-state:checked ~ .hamb .hamb-line::before { transform: rotate(-45deg); top:0 }
+		#hamb-state:checked ~ .hamb .hamb-line::after { transform: rotate(45deg); top:0 }
 
 		.navlinks { display:grid; grid-template-columns:1fr 1fr; margin-top: 2em }
 		.navlinks a.prev { text-align:right }
@@ -131,16 +126,16 @@
 
 	<header class=navbar>
 			<!-- Hamburger icon -->
-			<input type="checkbox" id="hamb-state"/>
+			<input type="checkbox" id="hamb-state" bind:this={hambState} />
 			<label class="hamb" for="hamb-state"><span class="hamb-line"></span></label>
 
-			<nav>
+			<nav style="--n-pages: {nPages}">
 				<p class=language>
 					<a class:active={lang=='de'} href="{data.route.id.replace(/\[lang\]/, 'de')}">DE</a>
 					<a class:active={lang=='en'} href="{data.route.id.replace(/\[lang\]/, 'en')}">EN</a>
 				</p>
 				{#each pages as p}
-					<a class:active={page == p.page} href="/{lang}/{p.page}">{p[lang] ? p[lang] : p['de']}</a>
+					<a class:active={page == p.page} href="/{lang}/{p.page}" on:click={pageClick}>{p[lang] ? p[lang] : p['de']}</a>
 				{/each}
 		</nav>
 
