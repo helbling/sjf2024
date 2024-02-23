@@ -11,5 +11,6 @@ export default [
 	// { page: 'zirkusjugend', de:'Zirkusjugend' },
 	// { page: 'goenner',      de:'Gönner' },
 	// { page: 'medien',       de:'Medien' },
+	{ page: 'news',       de:'News' },
 	{ page: 'kontakt',    de:'Kontakt', en:'Contact' },
 ];
