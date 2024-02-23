@@ -13,7 +13,7 @@
 </style>
 <h1>News</h1>
 
-<h2>{t('Tritt unserer Mailingliste bei', 'Join our mailing list')}</h2>
+<h2>{t('Newsletter abonnieren', 'Subscribe to the newsletter')}</h2>
 <p>{t('Trage unten deine Mailadresse ein, um nichts zu verpassen', 'Enter your email address below so you don\'t miss anything')}:</p>
 
 <form method="post" action="https://jongliertreff-winti.ch/mailman/subscribe/festival-info_jongliertreff-winti.ch" target=_blank>
