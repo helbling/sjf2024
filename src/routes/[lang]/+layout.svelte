@@ -103,7 +103,9 @@
 				max-height: 2.4em;
 				transition: all .2s ease-out; /* TODO: fix this transition.. */
 		}
-		nav .language { margin-top:0.5em; margin-bottom: 1.2em }
+		nav .language { margin-top:0; margin-bottom: 1.2em }
+		nav .language a  { display:inline-block }
+
 		#hamb-state:checked ~ nav { max-height: calc(3em + var(--n-pages) * 2.5em) }
 
 		#hamb-state:checked ~ .hamb .hamb-line { background: transparent }
