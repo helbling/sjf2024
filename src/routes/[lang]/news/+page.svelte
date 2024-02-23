@@ -6,9 +6,11 @@
 </script>
 
 <style>
-	input{ line-height:2; font-size:1em }
+	@media (max-width:30em ) { /* very small screens */
+		form { display:flex; gap:0.3em; flex-wrap:wrap }
+		#email { flex-grow: 1 }
+	}
 </style>
-
 <h1>News</h1>
 
 <h2>{t('Tritt unserer Mailingliste bei', 'Join our mailing list')}</h2>
@@ -20,6 +22,6 @@
 	<!-- <input name="pw-conf" type="hidden"> -->
 	<input name="language" value={lang} type="hidden">
 	<input name="digest" value="0" type="hidden">
-	<input type="submit" class=button value={t('Eintragen', 'Subscribe')}>
+	<input type="submit" class=button value={t('eintragen', 'subscribe')}>
 </form>
 <p>{t('Bitte vergiss nicht, deine Mailadresse zu bestätigen.', 'Don\'t forget to confirm your email address')}</p>

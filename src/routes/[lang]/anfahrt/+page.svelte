@@ -11,10 +11,6 @@
 
 </script>
 
-<style>
-	input{ line-height:2; font-size:1em }
-</style>
-
 <h1>{t('Anfahrt', 'Getting there')}</h1>
 
 Infopoint / Halle 710:

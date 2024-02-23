@@ -25,11 +25,28 @@
 </script>
 
 <style>
-	:root { --text_color:#444 }
+	:root { --text_color:#444; --signature_color:#f0b045; }
 	:global(html),:global(body) { height:100%; padding:0; margin:0; font-family: 'Open Sans', Helvetica, Arial, sans-serif; background:#f8f8f8; font-size:18px }
 	:global(html) { overflow-y:scroll; }
+	:global(input:not([type='checkbox'])) {
+		-webkit-appearance:none;
+		-moz-appearance:none;
+		appearance:none;
+		line-height:2;
+		font-size:1em;
+		border:1px solid #888;
+		border-radius:0.3em;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+		padding:0.5em 0.5em;
+	}
+	:global(input[type="submit"]) { background-color:var(--signature_color); color:var(--text_color); font-weight:bolder; font-family: 'Open Sans', Helvetica, Arial, sans-serif;  }
+	:global(input[type="submit"]:hover) { background-color:#f9dfb5 }
+	:global(input[type="checkbox"]) { height:1.5em; width:1.5em; padding:0.5em }
+
 	#container { margin:0 auto; max-width:70em; background:#fff; padding:0.5em }
-	nav, .navlinks { background-color:#f0b045; padding:0.5em }
+	nav, .navlinks { background-color:var(--signature_color); padding:0.5em }
 	nav a, .navlinks a { display:block; text-decoration:none; color:var(--text_color); padding:0.5em }
 	nav .language a  { display:inline }
 	nav a.active { background-color:rgba(255,255,255,0.6); font-weight:bold }
@@ -103,7 +120,7 @@
 		.logo, .navbar { position:absolute; width:14em }
 		.hamb { display:none }
 		.logo { text-align: left }
-		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:#f0b045 }
+		h1 { display: block; margin:auto; text-align:center; min-height:3em; background-color:var(--signature_color) }
 		nav { position:absolute; top:14em; margin-left:2em; width:9em }
 		#main { margin-left:14em; padding-left:1em; min-height:35em }
 		.navlinks { display:none }
