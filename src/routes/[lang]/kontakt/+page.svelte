@@ -6,6 +6,7 @@
 		lang = data.lang;
 		t_contact_form = t('Kontaktformular', 'Contact form');
 	}
+	const beta = import.meta.env.PROD ? '' : '_beta';
 </script>
 
 <style>
@@ -15,4 +16,4 @@
 
 <h3>{t_contact_form}</h3>
 
-<iframe title="{t_contact_form}" src="https://www.jonglierfestival.ch/kontaktformular.php?lang={lang}"></iframe>
+<iframe title="{t_contact_form}" src="https://www.jonglierfestival.ch/kontaktformular{beta}.php?lang={lang}"></iframe>
