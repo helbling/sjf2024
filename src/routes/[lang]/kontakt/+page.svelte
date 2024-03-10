@@ -10,7 +10,7 @@
 </script>
 
 <style>
-	iframe { border: none; width:100%; max-width:30em; height:40em }
+	iframe { border: none; width:100%; max-width:30em; height:60em }
 </style>
 <h2>Verein “Swiss Juggling Convention 2024 Winterthur ”, Winterthur</h2>
 
