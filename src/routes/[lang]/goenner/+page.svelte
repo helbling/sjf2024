@@ -20,10 +20,14 @@
 </script>
 
 <style>
-	a.logo { float:right; margin-bottom:2em }
-	a.logo img { max-width:18em }
-	li { clear:right }
-	ul { max-width: 45em }
+	.logo img { max-width:14em; margin:1em }
+	li {
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		flex-wrap:wrap;
+	}
+	ul { max-width:40em; padding-left:0 }
 </style>
 
 <h1>{t('Gönner', 'Sponsors')}</h1>
@@ -32,10 +36,14 @@
 <ul>
 	{#each sponsors as s }
 	<li>
-		{s.name}, <a href={s.url}>{s.url.replace(/^https?:\/\/(www\.)?/, '')}</a>
-		<a class=logo href={s.url} >
-			<img alt="{s.name} logo" src="/img/sponsors/{s.img}" />
-		</a>
+		<div class=name>
+			{s.name}, <a href={s.url}>{s.url.replace(/^https?:\/\/(www\.)?/, '')}</a>
+		</div>
+		<div class=logo>
+			<a href={s.url} >
+				<img alt="{s.name} logo" src="/img/sponsors/{s.img}" />
+			</a>
+		</div>
 	</li>
 	{/each}
 </ul>
