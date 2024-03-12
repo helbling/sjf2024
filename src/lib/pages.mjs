@@ -10,7 +10,7 @@ export default [
 	// { page: 'verpflegung',  de:'Verpflegung' },
 	// { page: 'zirkusjugend', de:'Zirkusjugend' },
 	{ page: 'goenner', de:'Gönner', en:'Sponsors'  },
-	{ page: 'partner',    de:'Partnerorg.', en:'Partners' },
+	// { page: 'partner',    de:'Partnerorg.', en:'Partners' },
 	// { page: 'medien',       de:'Medien' },
 	{ page: 'news',       de:'News' },
 	{ page: 'kontakt',    de:'Kontakt', en:'Contact' },
