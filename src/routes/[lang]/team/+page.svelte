@@ -12,7 +12,7 @@ Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deu
 	{ name: 'Peter Oertle',       role:'FireSpace', text:` Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird. Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird.`},
 	{ name: 'Florian Tinner',     role:'Kassier', text:`Als Zahlenjongleur ist Florian Tinner für die Buchhaltung verantwortlich und findet auf fast jede Frage im Finanzbereich eine Antwort` },
 	{ name: 'Werner Schüpbach',   role:'Revisionsstelle' },
-	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR'},
+	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR', text:`Jonglieren und Medien, beides begleitet mich seit über 20 Jahren. Für mich ist es daher eine doppelte Freude, die Medien mit der diesjährigen Swiss Juggling Convention vertraut zu machen.`},
 	{ name: 'Tobias Meier',       role:'Berater'},
 	{ name: 'Christian Helbling', role:'Webseite' },
 ];
