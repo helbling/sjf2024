@@ -9,8 +9,9 @@ const members = [
 Jedes Jahr nehme ich an verschiedenen Jonglierkonventionen in der Schweiz und Deutschland teil und besuche regelmäßig die European Juggling Convention (EJC).
 
 Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deutschland wurde mein Wunsch geweckt, selbst eine solche Veranstaltung zu organisieren. Als Teil des Organisationskomitees (OKA) für das Schweizer Jonglier Convention (SJC) trage ich die Verantwortung für das Programm, einschliesslich Galashows, Firespaces, Jonglier-Battles usw. Es bereitet mir grosse Freude, meine Erfahrungen im Bereich Shows und Conventions in die Gestaltung des SJC einzubringen.` },
-	{ name: 'Florian Tinner',     role:'Kassier'},
-	{ name: 'Werner Schüpbach',   role:'Revisionsstelle'},
+	{ name: 'Peter Oertle',       role:'FireSpace', text:` Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird. Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird.`},
+	{ name: 'Florian Tinner',     role:'Kassier', text:`Als Zahlenjongleur ist Florian Tinner für die Buchhaltung verantwortlich und findet auf fast jede Frage im Finanzbereich eine Antwort` },
+	{ name: 'Werner Schüpbach',   role:'Revisionsstelle' },
 	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR'},
 	{ name: 'Tobias Meier',       role:'Berater'},
 	{ name: 'Christian Helbling', role:'Webseite' },
@@ -24,7 +25,7 @@ Peter Piper picked a peck of pickled peppers.
 A peck of pickled peppers Peter Piper picked.
 If Peter Piper picked a peck of pickled peppers,
 Where's the peck of pickled peppers Peter Piper picked?`;
-	
+
 	function text2html(text) {
 		return text.split("\n\n").map(t => `<p>${t}</p>`).join("\n");
 	}
