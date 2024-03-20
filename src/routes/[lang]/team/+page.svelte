@@ -14,7 +14,7 @@ Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deu
 	{ name: 'Werner Schüpbach',   role:'Revisionsstelle' },
 	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR', img:'reto.jpg', text:`Jonglieren und Medien, beides begleitet mich seit über 20 Jahren. Für mich ist es daher eine doppelte Freude, die Medien mit der diesjährigen Swiss Juggling Convention vertraut zu machen.`},
 	{ name: 'Tobias Meier',       role:'Berater'},
-	{ name: 'Christian Helbling', role:'Webseite', text:`Als leidenschaftlicher Keulen-Passer, Einradfahrer und auch Programmierer bin ich verantworlich für die Webseite. Ich bin der Autor von <a href="https://passist.org">passist.org</a> - einem Passing-Simulator für Siteswaps. Ich freue mich, an der SJC Tipps und Workshops fürs Jonglieren und Einradfahren zu geben.`},
+	{ name: 'Christian Helbling', role:'Webseite', img:'christian.jpg', text:`Als leidenschaftlicher Keulen-Passer, Einradfahrer und auch Programmierer bin ich verantworlich für die Webseite. Ich bin der Autor von <a href="https://passist.org">passist.org</a> - einem Passing-Simulator für Siteswaps. Ich freue mich, an der SJC Tipps und Workshops fürs Jonglieren und Einradfahren zu geben.`},
 ];
 	const fillertext = `How much wood would a woodchuck chuck,
 If a woodchuck could chuck wood?
