@@ -1,20 +1,20 @@
 <script>
 const members = [
 	{ name: 'Simon Monai',        role:'Präsident', img:'simon.png' },
-	{ name: 'Herbi Burren',       role:'Location / Sponsoring' },
+	{ name: 'Herbert (Herbi) Burren',     role:'Location / Sponsoring', img:'herbert.jpg', text:`Seit vielen Jahren engagierter Hobby-Jongleur. Verantwortlicher für den Winterthurer Jongliertreff (<a href='https://www.jongliertreff-winti.ch'>www.jongliertreff-winti.ch</a>) und langjähriger Mitarbeiter vom Sportamt Winterthur mit grossem Netzwerk in Sport und Wirtschaft. Und jetzt überzeugter Unterstützer des diesjährigen Schweizer Jonglierfestivals  . . . „immer mit dem Fokus, den vielen lokalen und nationalen jonglierbegeisterten Jugendlichen und Erwachsenen ein gut organisiertes, hochstehendes und spannendes Jonglierweekend zu bieten – also beste Werbung für unser cooles Hobby – als wertvolle Freizeitaktivität für Jung und Alt“.`},
 	{ name: 'Dominique Druey',    role:'Beisitzer / Springer' },
 	{ name: 'Kaspar Wohnlich',    role:'Zirkusjugend' },
-	{ name: 'Christopf Haller',   role:'Galashow / Workshops', text:`Mein Name ist Christof Haller und ich bin ein leidenschaftlicher Jongleur, der sich mit einer Vielzahl von Jonglierprops wie Keulen, Ringen, Bällen, Poi, Kendama usw. beschäftigt.
+	{ name: 'Christof Haller',   role:'Galashow / Workshops', img:'christof.jpg', text:`Mein Name ist Christof Haller und ich bin ein leidenschaftlicher Jongleur, der sich mit einer Vielzahl von Jonglierprops wie Keulen, Ringen, Bällen, Poi, Kendama usw. beschäftigt.
 
 Jedes Jahr nehme ich an verschiedenen Jonglierkonventionen in der Schweiz und Deutschland teil und besuche regelmäßig die European Juggling Convention (EJC).
 
 Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deutschland wurde mein Wunsch geweckt, selbst eine solche Veranstaltung zu organisieren. Als Teil des Organisationskomitees (OKA) für das Schweizer Jonglier Convention (SJC) trage ich die Verantwortung für das Programm, einschliesslich Galashows, Firespaces, Jonglier-Battles usw. Es bereitet mir grosse Freude, meine Erfahrungen im Bereich Shows und Conventions in die Gestaltung des SJC einzubringen.` },
-	{ name: 'Peter Oertle',       role:'FireSpace', text:` Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird. Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird.`},
-	{ name: 'Florian Tinner',     role:'Kassier', text:`Als Zahlenjongleur ist Florian Tinner für die Buchhaltung verantwortlich und findet auf fast jede Frage im Finanzbereich eine Antwort` },
+	{ name: 'Peter Oertle',       role:'FireSpace', img:'peter.jpg', text:` Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird. Ich bin seit vielen Jahren leidenschaftlicher Feuerspieler und freue mich darauf, Teil des Organisations-Teams zu sein. Mit meinem langjährigen Engagement und Talent für das Jonglieren möchte ich dazu beitragen, dass diese Veranstaltung ein voller Erfolg wird.`},
+	{ name: 'Florian Tinner',     role:'Kassier', img:'florian.jpg', text:`Als Zahlenjongleur ist Florian Tinner für die Buchhaltung verantwortlich und findet auf fast jede Frage im Finanzbereich eine Antwort` },
 	{ name: 'Werner Schüpbach',   role:'Revisionsstelle' },
-	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR', text:`Jonglieren und Medien, beides begleitet mich seit über 20 Jahren. Für mich ist es daher eine doppelte Freude, die Medien mit der diesjährigen Swiss Juggling Convention vertraut zu machen.`},
+	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR', img:'reto.jpg', text:`Jonglieren und Medien, beides begleitet mich seit über 20 Jahren. Für mich ist es daher eine doppelte Freude, die Medien mit der diesjährigen Swiss Juggling Convention vertraut zu machen.`},
 	{ name: 'Tobias Meier',       role:'Berater'},
-	{ name: 'Christian Helbling', role:'Webseite' },
+	{ name: 'Christian Helbling', role:'Webseite', text:`Als leidenschaftlicher Keulen-Passer, Einradfahrer und auch Programmierer bin ich verantworlich für die Webseite. Ich bin der Autor von <a href="https://passist.org">passist.org</a> - einem Passing-Simulator für Siteswaps. Ich freue mich, an der SJC Tipps und Workshops fürs Jonglieren und Einradfahren zu geben.`},
 ];
 	const fillertext = `How much wood would a woodchuck chuck,
 If a woodchuck could chuck wood?
