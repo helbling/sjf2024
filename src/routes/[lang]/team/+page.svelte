@@ -62,6 +62,15 @@ Where's the peck of pickled peppers Peter Piper picked?`;
 			inset 20px -10px 10px 0px white,
 			inset -20px 10px 10px 0px white;
 	}
+
+
+	@media (min-width:70em) { /* wide screens */
+		.member { display:grid; align-items:center; column-gap:2em }
+		.name  { grid-column:1; grid-row:1 }
+		.image { grid-column:1; grid-row:2 }
+		.role  { grid-column:1; grid-row:3 }
+		.text  { grid-column:2; grid-row-start:2; grid-row-end:3;  }
+	}
 </style>
 
 <div class=container>
