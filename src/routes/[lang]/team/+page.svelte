@@ -1,6 +1,6 @@
 <script>
 const members = [
-	{ name: 'Simon Monai',        role:'Präsident', img:'simon.png' },
+	{ name: 'Simon Monai',        role:'Präsident', img:'simon.png', text:`Seit dem Jonglierfestival 2016 in Uster bin ich begeistert von den tollen Stimmung an solchen Conventions und freue mich sehr, mit dem diesjährigen Festival in Winterthur auch wieder etwas an die Community zurückgeben zu können.` },
 	{ name: 'Herbert (Herbi) Burren',     role:'Location / Sponsoring', img:'herbert.jpg', text:`Seit vielen Jahren engagierter Hobby-Jongleur. Verantwortlicher für den Winterthurer Jongliertreff (<a href='https://www.jongliertreff-winti.ch'>www.jongliertreff-winti.ch</a>) und langjähriger Mitarbeiter vom Sportamt Winterthur mit grossem Netzwerk in Sport und Wirtschaft. Und jetzt überzeugter Unterstützer des diesjährigen Schweizer Jonglierfestivals  . . . „immer mit dem Fokus, den vielen lokalen und nationalen jonglierbegeisterten Jugendlichen und Erwachsenen ein gut organisiertes, hochstehendes und spannendes Jonglierweekend zu bieten – also beste Werbung für unser cooles Hobby – als wertvolle Freizeitaktivität für Jung und Alt“.`},
 	{ name: 'Dominique Druey',    role:'Beisitzer / Springer' },
 	{ name: 'Kaspar Wohnlich',    role:'Zirkusjugend' },
@@ -69,7 +69,7 @@ Where's the peck of pickled peppers Peter Piper picked?`;
 		.name  { grid-column:1; grid-row:1 }
 		.image { grid-column:1; grid-row:2 }
 		.role  { grid-column:1; grid-row:3 }
-		.text  { grid-column:2; grid-row-start:2; grid-row-end:3;  }
+		.text  { grid-column:2; grid-row-start:2; grid-row-end:3 }
 	}
 </style>
 
