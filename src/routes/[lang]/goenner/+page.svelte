@@ -16,6 +16,11 @@
 			url: 'https://www.jugglux.ch',
 			img: 'jugglux.png',
 		},
+		{
+			name: 'Stadt Winterthur',
+			url: 'https://stadt.winterthur.ch/',
+			img: 'stadt_winterthur.png',
+		},
 	];
 </script>
 
