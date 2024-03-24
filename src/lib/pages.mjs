@@ -12,6 +12,7 @@ export default [
 	{ page: 'goenner', de:'Gönner', en:'Sponsors'  },
 	// { page: 'partner',    de:'Partnerorg.', en:'Partners' },
 	// { page: 'medien',       de:'Medien' },
+	{ page: 'team',       de:'Team' },
 	{ page: 'news',       de:'News' },
 	{ page: 'kontakt',    de:'Kontakt', en:'Contact' },
 ];
