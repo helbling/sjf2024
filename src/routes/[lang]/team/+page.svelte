@@ -16,15 +16,7 @@ Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deu
 	{ name: 'Tobias Meier',       role:'Berater'},
 	{ name: 'Christian Helbling', role:'Webseite', img:'christian.jpg', text:`Als leidenschaftlicher Keulen-Passer, Einradfahrer und auch Programmierer bin ich verantworlich für die Webseite. Ich bin der Autor von <a href="https://passist.org">passist.org</a> - einem Passing-Simulator für Siteswaps. Ich freue mich, an der SJC Tipps und Workshops fürs Jonglieren und Einradfahren zu geben.`},
 ];
-	const fillertext = `How much wood would a woodchuck chuck,
-If a woodchuck could chuck wood?
-A woodchuck would chuck all the wood he could chuck
-If a woodchuck would chuck wood.
-
-Peter Piper picked a peck of pickled peppers.
-A peck of pickled peppers Peter Piper picked.
-If Peter Piper picked a peck of pickled peppers,
-Where's the peck of pickled peppers Peter Piper picked?`;
+	const fillertext = ``;
 
 	function text2html(text) {
 		return text.split("\n\n").map(t => `<p>${t}</p>`).join("\n");
@@ -69,7 +61,12 @@ Where's the peck of pickled peppers Peter Piper picked?`;
 		.name  { grid-column:1; grid-row:1 }
 		.image { grid-column:1; grid-row:2 }
 		.role  { grid-column:1; grid-row:3 }
-		.text  { grid-column:2; grid-row-start:2; grid-row-end:3 }
+		.text  { grid-column:2; grid-row-start:2; grid-row-end:3; margin-right:2em }
+
+		.name, .image, .role {
+			max-width:calc(25rem + 2px);
+			max-height:calc(25rem + 2px);
+		}
 	}
 </style>
 
