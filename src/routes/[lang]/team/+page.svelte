@@ -39,8 +39,8 @@ Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deu
 		border-radius: 50%;
 		display: block;
 		border:1px solid #fff;
-		width:25em;
-		height:25em;
+		width: min(25em, 95vw);
+		height:min(25em, 95vw);
 	}
 	div.image:after {
 		content: "";
