@@ -14,7 +14,7 @@
 <h1>{t('Anfahrt', 'Getting there')}</h1>
 
 Infopoint / Halle 710:
-<b>{infopointAddress}</b>
+<a href="https://search.ch/map/Winterthur,Barbara-Reinhart-Str.25"><b>{infopointAddress}</b></a>
 
 <h2>{t('ÖV', 'Public transportation')}</h2>
 
