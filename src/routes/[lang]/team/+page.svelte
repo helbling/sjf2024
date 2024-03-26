@@ -2,7 +2,9 @@
 const members = [
 	{ name: 'Simon Monai',        role:'Präsident', img:'simon.png', text:`Seit dem Jonglierfestival 2016 in Uster bin ich begeistert von den tollen Stimmung an solchen Conventions und freue mich sehr, mit dem diesjährigen Festival in Winterthur auch wieder etwas an die Community zurückgeben zu können.` },
 	{ name: 'Herbert (Herbi) Burren',     role:'Location / Sponsoring', img:'herbert.jpg', text:`Seit vielen Jahren engagierter Hobby-Jongleur. Verantwortlicher für den Winterthurer Jongliertreff (<a href='https://www.jongliertreff-winti.ch'>www.jongliertreff-winti.ch</a>) und langjähriger Mitarbeiter vom Sportamt Winterthur mit grossem Netzwerk in Sport und Wirtschaft. Und jetzt überzeugter Unterstützer des diesjährigen Schweizer Jonglierfestivals  . . . „immer mit dem Fokus, den vielen lokalen und nationalen jonglierbegeisterten Jugendlichen und Erwachsenen ein gut organisiertes, hochstehendes und spannendes Jonglierweekend zu bieten – also beste Werbung für unser cooles Hobby – als wertvolle Freizeitaktivität für Jung und Alt“.`},
-	{ name: 'Dominique Druey',    role:'Beisitzer / Springer' },
+	{ name: 'Dominique Druey',    role:'Beisitzer / Springer', img:'dominique.jpg', text:` Aus Jonglieren anstatt Fussball während des Sportunterrichts wurde vor über 30 Jahren der Jonglier-Egge und später der Jugglux.
+Nach längerer Jonglier-Pause freue ich mich jede Woche aufs Passing im Jongliertreff.
+Nun bin ich gerne wieder im OK mit dabei, wenn das Jonglierfestival nach 16 Jahren wieder in Winterthur stattfindet.` },
 	{ name: 'Kaspar Wohnlich',    role:'Zirkusjugend' },
 	{ name: 'Christof Haller',   role:'Galashow / Workshops', img:'christof.jpg', text:`Mein Name ist Christof Haller und ich bin ein leidenschaftlicher Jongleur, der sich mit einer Vielzahl von Jonglierprops wie Keulen, Ringen, Bällen, Poi, Kendama usw. beschäftigt.
 
@@ -13,7 +15,9 @@ Durch meine Teilnahme an zahlreichen Jonglierkonventionen in der Schweiz und Deu
 	{ name: 'Florian Tinner',     role:'Kassier', img:'florian.jpg', text:`Als Zahlenjongleur ist Florian Tinner für die Buchhaltung verantwortlich und findet auf fast jede Frage im Finanzbereich eine Antwort` },
 	{ name: 'Werner Schüpbach',   role:'Revisionsstelle' },
 	{ name: 'Reto Baliarda',      role:'Medien, Werbung, PR', img:'reto.jpg', text:`Jonglieren und Medien, beides begleitet mich seit über 20 Jahren. Für mich ist es daher eine doppelte Freude, die Medien mit der diesjährigen Swiss Juggling Convention vertraut zu machen.`},
-	{ name: 'Tobias Meier',       role:'Berater'},
+	{ name: 'Tobias Meier',       role:'Berater', img:'tobias.jpg', text:`Hallo, mein Name ist Tobias Meier und mich begeistert das Jonglieren mittlerweile seit fast 8 Jahren.
+Highlights waren immer Jonglierconventions weil ich dort am meisten lernen konnte und inspiriert wurde besser zu werden.
+Daher ist es für mich eine Freude dieses Jahr am Jonglierfestival in Winterthur mitzuorganisieren.`},
 	{ name: 'Christian Helbling', role:'Webseite', img:'christian.jpg', text:`Als leidenschaftlicher Keulen-Passer, Einradfahrer und auch Programmierer bin ich verantworlich für die Webseite. Ich bin der Autor von <a href="https://passist.org">passist.org</a> - einem Passing-Simulator für Siteswaps. Ich freue mich, an der SJC Tipps und Workshops fürs Jonglieren und Einradfahren zu geben.`},
 ];
 	const fillertext = ``;
